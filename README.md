@@ -19,3 +19,5 @@ cd ~/dotfiles/packages
 
 cd dotfiles
 ./install.sh
+
+sudo reboot
