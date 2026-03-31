@@ -1,0 +1,103 @@
+{
+    "layer": "top",               // A barra fica sobre as janelas
+    "position": "top",            // No topo da tela
+    "height": 30,                 // Altura da barra
+    "spacing": 7,                 // Espaço entre os módulos
+
+    // Define quais módulos vão para cada área
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["cpu", "memory", "disk", "temperature", "network","pulseaudio", "tray"],
+    
+         // Módulo de Workspaces para Hyprland
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "persistent-workspaces": {
+            "DP-1": [1, 2, 3, 4, 5]
+        },
+        "workspace-taskbar": {
+            "enable": true,
+            "icon-size": 16,
+            "update-active-window": true,
+            "active-window-position": "first",
+            "ignore-list": [
+                "org.gnome.Nautilus"
+            ]
+        }
+    },
+      "tray": {
+    "icon-size": 16,
+    "spacing": 5,
+    "show-passive-items": true
+  },
+
+    // Módulo de Relógio
+    "clock": {
+        "format": "{:%H:%M}",                     // Formato 24h (ex: 14:30)
+        "format-alt": "{:%A, %d de %B de %Y}",    // Formato alternativo ao clicar
+        "tooltip-format": "<big>{calendar}</big>" ,// Mostra calendário ao passar o mouse
+        "actions": {
+        "on-scroll-up": "shift_up",     // Roda o scroll para cima: mês anterior
+        "on-scroll-down": "shift_down"  // Roda o scroll para baixo: próximo mês
+    }
+    },
+
+   "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-muted": "🔇",
+    "format-icons": ["", "", ""],
+    "on-click": "pavucontrol" ,         // Abre ao clicar esquerdo
+    // Opcionais:
+    //"on-click-right": "pavucontrol" // Abre ao clicar direito
+    // "on-click-middle": "pavucontrol" // Abre ao clicar no meio
+     "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+",   // Aumenta volume
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-",  // Diminui volume
+       "on-click-right": "~/.config/waybar/toggle-sink.sh",   // ← Adicione esta linha
+    "scroll-step": 5                              // Passo alternativo (usado por alguns módulos)
+}, 
+// CPU
+    "cpu": {
+        "format": " {usage}%",
+        "interval": 2,
+        "tooltip": true,
+        "tooltip-format": "CPU Usage: {usage}%\nLoad Avg: {avg}",
+        "on-click": "konsole -e htop"
+    },
+    
+    // Memória RAM
+    "memory": {
+        "format": " {percentage}%",
+        "interval": 2,
+        "tooltip": true,
+        "tooltip-format": "RAM: {used:0.1f}GB / {total:0.1f}GB",
+        "on-click": "konsole -e htop"
+    },
+    
+    // Disco
+    "disk": {
+        "format": " {percentage_used}%",
+        "interval": 5,
+        "path": "/",
+        "tooltip": true,
+        "tooltip-format": "/: {used}GB / {total}GB"
+    },
+    
+    // Temperatura
+    "temperature": {
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", "", "", ""],
+        "critical-threshold": 80,
+        "interval": 2,
+        "tooltip-format": "Temp: {temperatureC}°C"
+    },
+    
+    // Rede
+    "network": {
+        "format-wifi": " {essid}",
+        "format-ethernet": "󰈀 {ipaddr}",
+        "format-disconnected": "⚠",
+        "on-click": "nm-connection-editor"
+    },
+
+
+}

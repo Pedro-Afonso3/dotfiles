@@ -1,0 +1,9 @@
+anydesk-bin
+brave-bin
+electron40-bin
+electron40-bin-debug
+sddm-sugar-candy-git
+sddm-theme-corners-git
+vesktop-bin
+yay
+yay-debug

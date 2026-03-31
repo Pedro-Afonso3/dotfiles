@@ -1,0 +1,61 @@
+# ~/.config/dunst/dunstrc
+
+[global]
+    # Posição na tela
+    origin = top-right
+    
+    # Distância das bordas (px)
+    offset = 10x50
+    
+    # Tamanho da notificação
+    width = 300
+    height = 200
+    
+    # Transparência (0-100)
+    transparency = 10
+    
+    # Cores
+    frame_color = "#313244"
+    separator_color = "#313244"
+    
+    # Fonte
+    font = JetBrains Mono 10
+    
+    # Tempo de exibição (ms)
+    timeout = 5000
+    
+    # Tamanho do ícone
+    min_icon_size = 32
+    max_icon_size = 64
+    
+    # Comportamento
+    show_indicators = yes
+    sticky_history = yes
+    history_length = 20
+    
+    # Aplicativos que não devem mostrar notificações
+    ignore_newline = no
+
+[urgency_low]
+    background = "#1e1e2e"
+    foreground = "#cdd6f4"
+    timeout = 3
+    frame_color = "#313244"
+
+[urgency_normal]
+    background = "#313244"
+    foreground = "#cdd6f4"
+    timeout = 5
+    frame_color = "#45475a"
+
+[urgency_critical]
+    background = "#f38ba8"
+    foreground = "#1e1e2e"
+    timeout = 0
+    frame_color = "#f38ba8"
+
+[shortcuts]
+    close = ctrl+space
+    close_all = ctrl+shift+space
+    history = ctrl+grave
+    context = ctrl+shift+period

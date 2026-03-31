@@ -1,0 +1,83 @@
+* {
+    font-family: "JetBrainsMono Nerd Font", FontAwesome;
+    font-size: 13px;
+}
+
+window#waybar {
+    background: transparent /*#1e1e2e*/;      /* Cor de fundo escura */
+    color: #cdd6f4;           /* Cor do texto principal */
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background: transparent;
+    color: #585b70;
+    border-radius: 5px;
+}
+
+ /* Cor do workspace ativo */
+#workspaces button.active {
+    color: #f5c2e7;          
+    background: #313244;
+}
+
+#clock {
+    background-color: #585b70;
+    padding: 0 10px;
+    border-radius: 8px;
+}
+
+#pulseaudio, #network{
+    padding: 0 8px;
+}
+
+/* Estilo para cada ícone de aplicativo na taskbar */
+#workspaces .taskbar-window {
+    padding: 10px;
+    background: transparent;
+    font-size: 14px;
+    margin: 0 6px;
+}
+
+/* Destaque para o ícone do aplicativo que está ativo/focado */
+ #workspaces .taskbar-window.active {
+    background: #313244;
+    border-radius: 6px;
+    color: #f5c2e7;
+}
+
+#tray {
+  color: @sapphire;
+}
+
+/* Estilos para os módulos de sistema */
+#cpu,
+#memory,
+#disk,
+#temperature,
+#network,
+/* Cores específicas */
+#cpu {
+    color: #a6e3a1;
+}
+
+#memory {
+    color: #f9e2af;
+}
+
+#disk {
+    color: #cba6f7;
+}
+
+#temperature {
+    color: #f38ba8;
+}
+
+#temperature.critical {
+    color: #ff0000;
+    font-weight: bold;
+}
+
+#network {
+    color: #89b4fa;
+}
