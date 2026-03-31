@@ -30,7 +30,6 @@ htop
 hypridle
 hyprland
 hyprlock
-hyprpaper
 hyprpolkitagent
 hyprshot
 imagemagick
